@@ -9,11 +9,11 @@ def test_undirected_add_node_and_list():
 
     # when
     g.add_node(1)
-    g.add_node('a')
+    g.add_node("a")
     g.add_node(42)
 
     # then
-    assert set(g.nodes) == {1, 42, 'a'}
+    assert set(g.nodes) == {1, 42, "a"}
 
 
 def test_undirected_graph_add_edge_adds_node():
@@ -173,9 +173,9 @@ def test_remove_node_removes_edges_too_directed():
     g.add_edge(1, 1)
     g.remove_node(1)
 
-    assert (1,3) not in g.edges
-    assert (3,1) not in g.edges
-    assert (5,1) not in g.edges
+    assert (1, 3) not in g.edges
+    assert (3, 1) not in g.edges
+    assert (5, 1) not in g.edges
     assert len(g.edges) == 0
 
 
@@ -190,9 +190,9 @@ def test_remove_node_removes_edges_too_undirected():
     g.add_edge(1, 6)
     g.remove_node(1)
 
-    assert (1,3) not in g.edges
-    assert (3,1) not in g.edges
-    assert (5,1) not in g.edges
+    assert (1, 3) not in g.edges
+    assert (3, 1) not in g.edges
+    assert (5, 1) not in g.edges
     assert len(g.edges) == 0
 
 

@@ -64,7 +64,6 @@ class _UndirectedEdgeView(_EdgeView):
 
 
 class _DirectedEdgeView(_EdgeView):
-
     def __iter__(self):
         """Iterate through the edges.
 
@@ -149,7 +148,6 @@ class _Graph:
 
 
 class UndirectedGraph(_Graph):
-
     def __init__(self, _edge_view_factory=_UndirectedEdgeView):
         super().__init__(_edge_view_factory)
 
@@ -179,7 +177,7 @@ class UndirectedGraph(_Graph):
 
         """
         if u_label == v_label:
-            raise ValueError('Undirected graphs have no self loops.')
+            raise ValueError("Undirected graphs have no self loops.")
 
         for x in {u_label, v_label}:
             if x not in self.adj:
@@ -236,12 +234,13 @@ class UndirectedGraph(_Graph):
 
         """
         if (u_label, v_label) not in self.edges:
-            raise DoesNotExistError(f'The edge "({u_label}, {v_label})" does not exist.')
+            raise DoesNotExistError(
+                f'The edge "({u_label}, {v_label})" does not exist.'
+            )
 
         self.adj[u_label].discard(v_label)
         self.adj[v_label].discard(u_label)
         self._number_of_edges -= 1
-
 
     def neighbors(self, label):
         """The neighbors of the node.
@@ -266,7 +265,6 @@ class UndirectedGraph(_Graph):
 
 
 class DirectedGraph(_Graph):
-
     def __init__(self, _edge_view_factory=_DirectedEdgeView):
         super().__init__(_edge_view_factory)
         self.back_adj = dict()
@@ -352,7 +350,9 @@ class DirectedGraph(_Graph):
 
         """
         if (u_label, v_label) not in self.edges:
-            raise DoesNotExistError(f'The edge "({u_label}, {v_label})" does not exist.')
+            raise DoesNotExistError(
+                f'The edge "({u_label}, {v_label})" does not exist.'
+            )
 
         self.adj[u_label].discard(v_label)
         self.back_adj[v_label].discard(u_label)
