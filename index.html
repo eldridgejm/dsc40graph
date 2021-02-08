@@ -1,0 +1,676 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Welcome to dsc40graph’s documentation! &mdash; dsc40graph 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> dsc40graph
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to dsc40graph’s documentation!</a></li>
+<li><a class="reference internal" href="#user-guide">User Guide</a><ul>
+<li><a class="reference internal" href="#creating-graphs">Creating graphs</a><ul>
+<li><a class="reference internal" href="#example-1-undirected-graph">Example 1: Undirected Graph</a></li>
+<li><a class="reference internal" href="#example-2-directed-graph">Example 2: Directed Graph</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#working-with-graphs">Working with Graphs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api">API</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">dsc40graph</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to dsc40graph’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-dsc40graph-s-documentation">
+<h1>Welcome to dsc40graph’s documentation!<a class="headerlink" href="#welcome-to-dsc40graph-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>This module provides efficient data structures for representing undirected and
+directed graphs.</p>
+</div>
+<div class="section" id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<p>This section of the documentation describes the most common use cases. The next
+section lists the objects provided by the module.</p>
+<div class="section" id="creating-graphs">
+<h2>Creating graphs<a class="headerlink" href="#creating-graphs" title="Permalink to this headline">¶</a></h2>
+<p>This module contains two graph classes: <a class="reference internal" href="#dsc40graph.UndirectedGraph" title="dsc40graph.UndirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">UndirectedGraph</span></code></a> and
+<a class="reference internal" href="#dsc40graph.DirectedGraph" title="dsc40graph.DirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectedGraph</span></code></a>. They can be instantiated as follows:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dsc40graph</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">dsc40graph</span><span class="o">.</span><span class="n">UndirectedGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span> <span class="o">=</span> <span class="n">dsc40graph</span><span class="o">.</span><span class="n">DirectedGraph</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In what follows we will assume that the above lines have been executed so that
+we have two objects: <cite>graph</cite> and <cite>digraph</cite> representing an undirected graph and
+a directed graph, respectively.</p>
+<p>Nodes can be created by supplying the new node’s label to the
+<a class="reference internal" href="#dsc40graph.UndirectedGraph.add_node" title="dsc40graph.UndirectedGraph.add_node"><code class="xref py py-meth docutils literal notranslate"><span class="pre">UndirectedGraph.add_node()</span></code></a> and <a class="reference internal" href="#dsc40graph.DirectedGraph.add_node" title="dsc40graph.DirectedGraph.add_node"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DirectedGraph.add_node()</span></code></a> methods.
+Valid labels include numbers and strings:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In fact, anything that can be a key in a Python <cite>dict</cite> (i.e., anything
+<em>hashable</em>) can be a node label. For instance, a tuple of numbers and strings
+is hashable and can be a node label:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Edges are added to the graph by supplying the labels of the edge’s nodes to the
+<a class="reference internal" href="#dsc40graph.UndirectedGraph.add_edge" title="dsc40graph.UndirectedGraph.add_edge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">UndirectedGraph.add_edge()</span></code></a> and the <a class="reference internal" href="#dsc40graph.DirectedGraph.add_edge" title="dsc40graph.DirectedGraph.add_edge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DirectedGraph.add_edge()</span></code></a>
+methods:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If an edge involves a node which is not in the graph, the node is automatically created:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Nodes and edges can be removed with the
+<a class="reference internal" href="#dsc40graph.UndirectedGraph.remove_node" title="dsc40graph.UndirectedGraph.remove_node"><code class="xref py py-class docutils literal notranslate"><span class="pre">UndirectedGraph.remove_node</span></code></a>,
+<a class="reference internal" href="#dsc40graph.UndirectedGraph.remove_edge" title="dsc40graph.UndirectedGraph.remove_edge"><code class="xref py py-class docutils literal notranslate"><span class="pre">UndirectedGraph.remove_edge</span></code></a>,
+<a class="reference internal" href="#dsc40graph.DirectedGraph.remove_node" title="dsc40graph.DirectedGraph.remove_node"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectedGraph.remove_node</span></code></a>, and
+<a class="reference internal" href="#dsc40graph.DirectedGraph.remove_edge" title="dsc40graph.DirectedGraph.remove_edge"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectedGraph.remove_edge</span></code></a> methods.
+Any of these methods will raise an exception if the node/edge being removed does not exist.</p>
+<div class="section" id="example-1-undirected-graph">
+<h3>Example 1: Undirected Graph<a class="headerlink" href="#example-1-undirected-graph" title="Permalink to this headline">¶</a></h3>
+<p>Consider the following undirected graph.</p>
+<img alt="_images/graph.png" class="align-center" src="_images/graph.png" />
+<p>The most basic approach to representing the graph above in code is what follows:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">dsc40graph</span><span class="o">.</span><span class="n">UndirectedGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since nodes are automatically created when an edge is added, the same graph
+could have been constructed with the following code:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">dsc40graph</span><span class="o">.</span><span class="n">UndirectedGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An approach which is often more concise is to define a list of the edges and
+loop over them:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span> <span class="o">=</span> <span class="n">dsc40graph</span><span class="o">.</span><span class="n">UndirectedGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)]:</span>
+<span class="gp">... </span>    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-directed-graph">
+<h3>Example 2: Directed Graph<a class="headerlink" href="#example-2-directed-graph" title="Permalink to this headline">¶</a></h3>
+<p>Consider the following digraph:</p>
+<img alt="_images/digraph.png" class="align-center" src="_images/digraph.png" />
+<p>The most basic approach to creating this graph is as follows:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span> <span class="o">=</span> <span class="n">dsc40graph</span><span class="o">.</span><span class="n">DirectedGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>But because nodes are automatically created when edges are added, we could
+accomplish the same result with the following code:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">digraph</span> <span class="o">=</span> <span class="n">dsc40graph</span><span class="o">.</span><span class="n">DirectedGraph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)]:</span>
+<span class="gp">... </span>    <span class="n">digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="working-with-graphs">
+<h2>Working with Graphs<a class="headerlink" href="#working-with-graphs" title="Permalink to this headline">¶</a></h2>
+<p>Suppose the variable <code class="code docutils literal notranslate"><span class="pre">graph</span></code> represents the undirected graph shown below:</p>
+<img alt="_images/graph.png" class="align-center" src="_images/graph.png" />
+<p>While the code in this section will deal with the undirected graph above, the
+same code will work for directed graphs.</p>
+<p>Questions about the nodes in the graph can be answered by interacting with the <code class="code docutils literal notranslate"><span class="pre">graph.nodes</span></code>
+attribute. For instance, to get the number of nodes:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>To check if a node with a certain label exists:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;foo&#39;</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Similarly, questions about the edges of a graph are answered using the <code class="code docutils literal notranslate"><span class="pre">graph.edges</span></code> attribute.
+For example, the number of edges is found by writing:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>To query for the existence of an edge:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The <a class="reference internal" href="#dsc40graph.UndirectedGraph.neighbors" title="dsc40graph.UndirectedGraph.neighbors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">UndirectedGraph.neighbors()</span></code></a> method returns the neighbors of a node:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">graph</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">{&#39;c&#39;, &#39;b&#39;}</span>
+</pre></div>
+</div>
+<p>Do not modify this set! It is a view of the internal representation of the graph.</p>
+<p>In addition to having a <code class="code docutils literal notranslate"><span class="pre">.neighbors()</span></code> method, directed graphs have
+<a class="reference internal" href="#dsc40graph.DirectedGraph.predecessors" title="dsc40graph.DirectedGraph.predecessors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DirectedGraph.predecessors()</span></code></a> and <a class="reference internal" href="#dsc40graph.DirectedGraph.successors" title="dsc40graph.DirectedGraph.successors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DirectedGraph.successors()</span></code></a>
+methods. The <a class="reference internal" href="#dsc40graph.DirectedGraph.neighbors" title="dsc40graph.DirectedGraph.neighbors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DirectedGraph.neighbors()</span></code></a> method is an alias of
+<a class="reference internal" href="#dsc40graph.DirectedGraph.successors" title="dsc40graph.DirectedGraph.successors"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DirectedGraph.successors()</span></code></a>.</p>
+</div>
+</div>
+<div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dsc40graph.UndirectedGraph">
+<em class="property">class </em><code class="sig-name descname">UndirectedGraph</code><span class="sig-paren">(</span><em class="sig-param">_edge_view_factory=&lt;class 'dsc40graph._UndirectedEdgeView'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.UndirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="dsc40graph.UndirectedGraph.nodes">
+<code class="sig-name descname">nodes</code><a class="headerlink" href="#dsc40graph.UndirectedGraph.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A view of the graph’s nodes. The number of nodes can be found by writing:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A query for the node with label ‘u’ can be performed by writing:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;u&#39;</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="dsc40graph.UndirectedGraph.edges">
+<code class="sig-name descname">edges</code><a class="headerlink" href="#dsc40graph.UndirectedGraph.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>A view of the graph’s edges. The number of edges can be retrieved by writing:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A query for the edge with labels ‘u’ and ‘v’ can be performed by writing:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span>
+</pre></div>
+</div>
+<p>Since edges have no orientation in an undirected graph, the order of
+the nodes in the query does not matter. That is, the above is equivalent to:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.UndirectedGraph.add_node">
+<code class="sig-name descname">add_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.UndirectedGraph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a node with the given label.</p>
+<p>If the node already exists, nothing is done.</p>
+<p>Average case time complexity: Theta(1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.UndirectedGraph.remove_node">
+<code class="sig-name descname">remove_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.UndirectedGraph.remove_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a node grom the graph.</p>
+<p>Average case time complexity: Theta(# of neighbors)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the node to be removed.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#dsc40graph.DoesNotExistError" title="dsc40graph.DoesNotExistError"><strong>DoesNotExistError</strong></a> – If the node is not in the graph.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.UndirectedGraph.add_edge">
+<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u_label</span></em>, <em class="sig-param"><span class="n">v_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.UndirectedGraph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an undirected edge to the graph.</p>
+<p>If the edge already exists, nothing is done.</p>
+<p>Average case time complexity: Theta(1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u_label</strong> – Label of one of the nodes in the edge.</p></li>
+<li><p><strong>v_label</strong> – Label of the other node in the edge.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If either of the nodes is not in the graph, the node is created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If an attempt to add a self-loop is made. Undirected graphs do
+    not have self-loops.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.UndirectedGraph.remove_edge">
+<code class="sig-name descname">remove_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u_label</span></em>, <em class="sig-param"><span class="n">v_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.UndirectedGraph.remove_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the edge from the graph.</p>
+<p>Average case time complexity: Theta(1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u_label</strong> – The label of one of the nodes in the edge.</p></li>
+<li><p><strong>v_label</strong> – The label of the other node.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#dsc40graph.DoesNotExistError" title="dsc40graph.DoesNotExistError"><strong>DoesNotExistError</strong></a> – If the edge is not in the graph.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.UndirectedGraph.neighbors">
+<code class="sig-name descname">neighbors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.UndirectedGraph.neighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>The neighbors of the node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the node whose neighbors should be retrieved.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The neighbors as a Python set. This set should not be modified.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>set</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the return value is a set, there is no guarantee about the orders
+of the neighbors.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="dsc40graph.DirectedGraph">
+<em class="property">class </em><code class="sig-name descname">DirectedGraph</code><span class="sig-paren">(</span><em class="sig-param">_edge_view_factory=&lt;class 'dsc40graph._DirectedEdgeView'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.DirectedGraph" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt id="dsc40graph.DirectedGraph.nodes">
+<code class="sig-name descname">nodes</code><a class="headerlink" href="#dsc40graph.DirectedGraph.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A view of the graph’s nodes. The number of nodes can be found by writing:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A query for the node with label ‘u’ can be performed by writing:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;u&#39;</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">nodes</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="dsc40graph.DirectedGraph.edges">
+<code class="sig-name descname">edges</code><a class="headerlink" href="#dsc40graph.DirectedGraph.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>A view of the graph’s edges. The number of edges can be retrieved by writing:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A query for the edge with labels ‘u’ and ‘v’ can be performed by writing:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">edges</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.DirectedGraph.add_node">
+<code class="sig-name descname">add_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.DirectedGraph.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a node with the given label.</p>
+<p>If the node already exists, nothing is done.</p>
+<p>Average case time complexity: Theta(1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.DirectedGraph.remove_node">
+<code class="sig-name descname">remove_node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.DirectedGraph.remove_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a node grom the graph.</p>
+<p>Average case time complexity: Theta(# of predecessors)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the node to be removed.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#dsc40graph.DoesNotExistError" title="dsc40graph.DoesNotExistError"><strong>DoesNotExistError</strong></a> – If the node is not in the graph.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.DirectedGraph.add_edge">
+<code class="sig-name descname">add_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u_label</span></em>, <em class="sig-param"><span class="n">v_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.DirectedGraph.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a directed edge to the graph.</p>
+<p>If the edge already exists, nothing is done.</p>
+<p>Average case time complexity: Theta(1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u_label</strong> – Label of the parent node.</p></li>
+<li><p><strong>v_label</strong> – Label of the child node.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If either of the nodes is not in the graph, the node is created.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.DirectedGraph.remove_edge">
+<code class="sig-name descname">remove_edge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">u_label</span></em>, <em class="sig-param"><span class="n">v_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.DirectedGraph.remove_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the edge from the graph.</p>
+<p>Average case time complexity: Theta(1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>u_label</strong> – The label of one of the nodes in the edge.</p></li>
+<li><p><strong>v_label</strong> – The label of the other node.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#dsc40graph.DoesNotExistError" title="dsc40graph.DoesNotExistError"><strong>DoesNotExistError</strong></a> – If the edge is not in the graph.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.DirectedGraph.predecessors">
+<code class="sig-name descname">predecessors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.DirectedGraph.predecessors" title="Permalink to this definition">¶</a></dt>
+<dd><p>The predecessors of the node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the node whose predecessors should be retrieved.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The predecessors as a Python set. This set should not be modified.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>set</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the return value is a set, there is no guarantee about the orders
+of the neighbors.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.DirectedGraph.successors">
+<code class="sig-name descname">successors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.DirectedGraph.successors" title="Permalink to this definition">¶</a></dt>
+<dd><p>The successors of the node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>label</strong> – The label of the node whose successors should be retrieved.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The successors as a Python set. This set should not be modified.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>set</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the return value is a set, there is no guarantee about the orders
+of the neighbors.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="dsc40graph.DirectedGraph.neighbors">
+<code class="sig-name descname">neighbors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.DirectedGraph.neighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias of successors. Provided for convenience.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="dsc40graph.Error">
+<em class="property">class </em><code class="sig-name descname">Error</code><a class="headerlink" href="#dsc40graph.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for all errors specific to this module.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="dsc40graph.DoesNotExistError">
+<em class="property">class </em><code class="sig-name descname">DoesNotExistError</code><a class="headerlink" href="#dsc40graph.DoesNotExistError" title="Permalink to this definition">¶</a></dt>
+<dd><p>The node/edge does not exist.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, Justin Eldridge.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
