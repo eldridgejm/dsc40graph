@@ -1,6 +1,8 @@
 dsc40graph
 ==========
 
+![Run Tests](https://github.com/eldridgejm/dsc40graph/workflows/Run%20Tests/badge.svg)
+
 A simple graph library used in DSC 40B at UCSD.
 
-![Run Tests](https://github.com/eldridgejm/dsc40graph/workflows/Run%20Tests/badge.svg)
+See the documentation at  https://eldridgejm.github.io/dsc40graph/.
