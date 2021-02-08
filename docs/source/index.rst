@@ -16,6 +16,19 @@ Welcome to dsc40graph's documentation!
 This module provides efficient data structures for representing undirected and
 directed graphs.
 
+
+Installation
+============
+
+This module is on PyPI. To install it, simply run the command:
+
+.. code::
+
+    pip install dsc40graph
+
+Alternatively, you may download :code:`dsc40graph.py` from `GitHub <https://raw.githubusercontent.com/eldridgejm/dsc40graph/master/dsc40graph.py>`_
+and place it in the same directory as your code.
+
 User Guide
 ==========
 
