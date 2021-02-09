@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = "dsc40graph"
-copyright = "2019, Justin Eldridge"
+copyright = "2021, Justin Eldridge"
 author = "Justin Eldridge"
 
 # The full version, including alpha/beta/rc tags
-release = "1.0.0"
+release = "0.1.2"
 
 
 # -- General configuration ---------------------------------------------------
