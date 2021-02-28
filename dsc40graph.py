@@ -1,12 +1,54 @@
 """Efficient undirected and directed graph data structures."""
 
 
+MAX_NODES_DISPLAYED = 20
+MAX_EDGES_DISPLAYED = 10
+
+
 class Error(Exception):
     """Base class for all errors specific to this module."""
 
 
 class DoesNotExistError(Error):
     """The node/edge does not exist."""
+
+
+def _take(iterable, n):
+    for i, x in enumerate(iterable):
+        if i >= n:
+            break
+        yield x
+
+
+class _NodesView:
+    """A view into a graph's nodes."""
+
+    def __init__(self, nodes):
+        self._nodes = nodes
+
+    def __contains__(self, node):
+        """Membership query."""
+        return node in self._nodes
+
+    def __len__(self):
+        return len(self._nodes)
+
+    def __iter__(self):
+        yield from self._nodes
+
+    def __repr__(self):
+        limit = MAX_NODES_DISPLAYED
+        over_limit = len(self._nodes) > limit
+
+        if over_limit:
+            nodes_to_print = list(_take(self._nodes, MAX_NODES_DISPLAYED))
+            suffix = "..."
+        else:
+            nodes_to_print = self._nodes
+            suffix = ""
+
+        node_string = ", ".join(repr(node) for node in nodes_to_print) + suffix
+        return f"<{len(self._nodes)} nodes: {node_string}>"
 
 
 class _EdgeView:
@@ -33,6 +75,20 @@ class _EdgeView:
         Average case time complexity: Theta(1)
         """
         return self._number_of_edges
+
+    def __repr__(self):
+        limit = MAX_EDGES_DISPLAYED
+        over_limit = len(self) > limit
+
+        if over_limit:
+            edges_to_print = list(_take(self, MAX_EDGES_DISPLAYED))
+            suffix = "..."
+        else:
+            edges_to_print = list(self)
+            suffix = ""
+
+        edges_string = ", ".join(repr(edge) for edge in edges_to_print) + suffix
+        return f"<{len(self)} edges: {edges_string}>"
 
 
 class _UndirectedEdgeView(_EdgeView):
@@ -86,6 +142,9 @@ class _Graph:
         self._number_of_edges = 0
         self._edge_view_factory = _edge_view_factory
 
+    def __repr__(self):
+        return f"<{self.__class__.__name__} with {len(self.nodes)} nodes and {len(self.edges)} edges>"
+
     def add_node(self, label):
         """
         Add a node with the given label.
@@ -123,7 +182,7 @@ class _Graph:
         3
 
         """
-        return self.adj.keys()
+        return _NodesView(self.adj.keys())
 
     def arbitrary_node(self):
         """Return an arbitrary graph node. How the node is chosen is undefined.
