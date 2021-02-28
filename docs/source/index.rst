@@ -274,6 +274,7 @@ Classes
 
     .. automethod:: add_node
     .. automethod:: remove_node
+    .. automethod:: arbitrary_node
     .. automethod:: add_edge
     .. automethod:: remove_edge
     .. automethod:: neighbors
@@ -304,6 +305,7 @@ Classes
 
     .. automethod:: add_node
     .. automethod:: remove_node
+    .. automethod:: arbitrary_node
     .. automethod:: add_edge
     .. automethod:: remove_edge
     .. automethod:: predecessors

@@ -298,3 +298,20 @@ def test_remove_missing_edge_raises_directed():
     # when
     with pytest.raises(DoesNotExistError):
         g.remove_edge(2, 4)
+
+
+def test_arbitrary_node():
+    # given
+    g = UndirectedGraph()
+    g.add_edge(1, 2)
+    g.add_edge(2, 3)
+    u = g.arbitrary_node()
+    assert u in g.nodes
+
+
+
+def test_arbitrary_node_raises_if_graph_empty():
+    # given
+    g = UndirectedGraph()
+    with pytest.raises(DoesNotExistError):
+        u = g.arbitrary_node()

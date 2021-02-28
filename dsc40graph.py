@@ -103,6 +103,7 @@ class _Graph:
         if label not in self.nodes:
             self.adj[label] = set()
 
+
     @property
     def nodes(self):
         """A view into the graph's nodes.
@@ -124,6 +125,31 @@ class _Graph:
 
         """
         return self.adj.keys()
+
+    def arbitrary_node(self):
+        """Return an arbitrary graph node. How the node is chosen is undefined.
+
+        Takes Theta(1) time.
+
+        Raises
+        ------
+        DoesNotExistError
+            If the graph is empty.
+
+        Example
+        -------
+        >>> graph = UndirectedGraph()
+        >>> graph.add_node(1)
+        >>> graph.add_node(2)
+        >>> graph.add_node(3)
+        >>> graph.arbitrary_node()
+        2
+
+        """
+        try:
+            return next(iter(self.nodes))
+        except StopIteration:
+            raise DoesNotExistError("The graph is empty.")
 
     @property
     def edges(self):
