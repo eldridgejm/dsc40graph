@@ -103,7 +103,6 @@ class _Graph:
         if label not in self.nodes:
             self.adj[label] = set()
 
-
     @property
     def nodes(self):
         """A view into the graph's nodes.

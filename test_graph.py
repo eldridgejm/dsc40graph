@@ -309,7 +309,6 @@ def test_arbitrary_node():
     assert u in g.nodes
 
 
-
 def test_arbitrary_node_raises_if_graph_empty():
     # given
     g = UndirectedGraph()
