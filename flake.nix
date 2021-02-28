@@ -16,7 +16,7 @@
               name = "dsc40graph";
               src = ./.;
               propagatedBuildInputs = with python3Packages; [];
-              nativeBuildInputs = with python3Packages; [ pytest black ipython jupyter sphinx sphinx_rtd_theme ];
+              nativeBuildInputs = with python3Packages; [ pytest black ipython jupyter ];
             }
 
           );
