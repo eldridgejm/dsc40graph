@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -81,14 +82,14 @@
            <div itemprop="articleBody">
              
   <section id="welcome-to-dsc40graph-s-documentation">
-<h1>Welcome to dsc40graph’s documentation!<a class="headerlink" href="#welcome-to-dsc40graph-s-documentation" title="Permalink to this headline"></a></h1>
+<h1>Welcome to dsc40graph’s documentation!<a class="headerlink" href="#welcome-to-dsc40graph-s-documentation" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <p>This module provides efficient data structures for representing undirected and
 directed graphs.</p>
 </section>
 <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <p>This module is on PyPI. To install it, simply run the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">dsc40graph</span>
 </pre></div>
@@ -97,11 +98,11 @@ directed graphs.</p>
 and place it in the same directory as your code.</p>
 </section>
 <section id="user-guide">
-<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline"></a></h1>
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading"></a></h1>
 <p>This section of the documentation describes the most common use cases. The next
 section lists the objects provided by the module.</p>
 <section id="creating-graphs">
-<h2>Creating graphs<a class="headerlink" href="#creating-graphs" title="Permalink to this headline"></a></h2>
+<h2>Creating graphs<a class="headerlink" href="#creating-graphs" title="Permalink to this heading"></a></h2>
 <p>This module contains two graph classes: <a class="reference internal" href="#dsc40graph.UndirectedGraph" title="dsc40graph.UndirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">UndirectedGraph</span></code></a> and
 <a class="reference internal" href="#dsc40graph.DirectedGraph" title="dsc40graph.DirectedGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectedGraph</span></code></a>. They can be instantiated as follows:</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dsc40graph</span>
@@ -144,7 +145,7 @@ methods:</p>
 <a class="reference internal" href="#dsc40graph.DirectedGraph.remove_edge" title="dsc40graph.DirectedGraph.remove_edge"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirectedGraph.remove_edge</span></code></a> methods.
 Any of these methods will raise an exception if the node/edge being removed does not exist.</p>
 <section id="example-1-undirected-graph">
-<h3>Example 1: Undirected Graph<a class="headerlink" href="#example-1-undirected-graph" title="Permalink to this headline"></a></h3>
+<h3>Example 1: Undirected Graph<a class="headerlink" href="#example-1-undirected-graph" title="Permalink to this heading"></a></h3>
 <p>Consider the following undirected graph.</p>
 <img alt="_images/graph.png" class="align-center" src="_images/graph.png" />
 <p>The most basic approach to representing the graph above in code is what follows:</p>
@@ -175,7 +176,7 @@ loop over them:</p>
 </div>
 </section>
 <section id="example-2-directed-graph">
-<h3>Example 2: Directed Graph<a class="headerlink" href="#example-2-directed-graph" title="Permalink to this headline"></a></h3>
+<h3>Example 2: Directed Graph<a class="headerlink" href="#example-2-directed-graph" title="Permalink to this heading"></a></h3>
 <p>Consider the following digraph:</p>
 <img alt="_images/digraph.png" class="align-center" src="_images/digraph.png" />
 <p>The most basic approach to creating this graph is as follows:</p>
@@ -201,7 +202,7 @@ accomplish the same result with the following code:</p>
 </section>
 </section>
 <section id="working-with-graphs">
-<h2>Working with Graphs<a class="headerlink" href="#working-with-graphs" title="Permalink to this headline"></a></h2>
+<h2>Working with Graphs<a class="headerlink" href="#working-with-graphs" title="Permalink to this heading"></a></h2>
 <p>Suppose the variable <code class="code docutils literal notranslate"><span class="pre">graph</span></code> represents the undirected graph shown below:</p>
 <img alt="_images/graph.png" class="align-center" src="_images/graph.png" />
 <p>While the code in this section will deal with the undirected graph above, the
@@ -247,9 +248,9 @@ methods. The <a class="reference internal" href="#dsc40graph.DirectedGraph.neigh
 </section>
 </section>
 <section id="api">
-<h1>API<a class="headerlink" href="#api" title="Permalink to this headline"></a></h1>
+<h1>API<a class="headerlink" href="#api" title="Permalink to this heading"></a></h1>
 <section id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h2>
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="dsc40graph.UndirectedGraph">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UndirectedGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_edge_view_factory=&lt;class</span> <span class="pre">'dsc40graph._UndirectedEdgeView'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dsc40graph.UndirectedGraph" title="Permalink to this definition"></a></dt>
@@ -569,7 +570,7 @@ of the neighbors.</p>
 
 </section>
 <section id="exceptions">
-<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline"></a></h2>
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="dsc40graph.Error">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error</span></span><a class="headerlink" href="#dsc40graph.Error" title="Permalink to this definition"></a></dt>
@@ -585,7 +586,7 @@ of the neighbors.</p>
 </section>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
